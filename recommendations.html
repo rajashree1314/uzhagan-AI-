@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>உங்கள் பரிந்துரைக்கப்பட்ட திட்டங்கள்</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&family=Catamaran:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body background="bg.jpg">
+
+    <header>
+        <h1>🌾 பரிந்துரைக்கப்பட்ட விவசாய திட்டங்கள்</h1>
+        <p>உங்கள் விவரங்களுக்கு ஏற்ப கீழ்க்கண்ட அரசு திட்டங்கள் கிடைக்கின்றன.</p>
+    </header>
+
+    <section class="schemes-container">
+        {% if schemes %}
+            <div class="schemes-list">
+                {% for scheme in schemes %}
+                    <div class="scheme-card">
+                        <h2>📜 {{ scheme.scheme_name }}</h2>
+                        <p><strong>📌 தகுதி:</strong> {{ scheme.eligibility }}</p>
+                        <p><strong>🎁 நன்மைகள்:</strong> {{ scheme.benefits }}</p>
+                        <p><strong>📝 தேவையான ஆவணங்கள்:</strong> {{ scheme.required_documents }}</p>
+                        <p><strong>🛠️ விண்ணப்ப செயல்முறை:</strong> {{ scheme.apply_process }}</p>
+                        <p><strong>🌍 இணையதளம்:</strong> 
+                            {% if scheme.apply_link %}
+                                <a href="{{ scheme.apply_link }}" target="_blank">🔗 விண்ணப்பிக்க</a>
+                            {% else %}
+                                <span>⛔ இணையதள இணைப்பு இல்லை</span>
+                            {% endif %}
+                        </p>
+                        <p><strong>🏢 துறை:</strong> {{ scheme.department }}</p>
+                        <p><strong>📞 தொடர்பு:</strong> {{ scheme.contact_info }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="no-schemes">😔 மன்னிக்கவும்! உங்கள் விவரங்களுக்கு பொருத்தமான திட்டம் இல்லை.</p>
+        {% endif %}
+    </section>
+
+    <footer>
+        <a href="/" class="back-button">🔙 திரும்ப செல்ல</a>
+        <p>© 2025 விவசாய உதவித் திட்டங்கள் | விவசாயிகளுக்காக</p>
+    </footer>
+
+</body>
+</html>
