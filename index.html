@@ -1,1 +1,54 @@
 
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>விவசாய உதவித் திட்டங்கள்</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&family=Catamaran:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1> விவசாய உதவித் திட்டங்கள்</h1>
+        <p>உங்கள் விவசாய விவரங்களை உள்ளிட்டு, தகுதியான அரசு திட்டங்களை பெறுங்கள்!</p>
+    </header>
+
+    <section class="form-container">
+        <form action="/recommend" method="POST">
+            
+            <label for="land_size">🌱 நில அளவு (ஹெக்டேர்):</label>
+            <input type="number" id="land_size" name="land_size" required><br>
+
+            <label for="category">👨‍🌾 விவசாயி வகை:</label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>வகையை தேர்வு செய்யவும்</option>
+                <option value="small">சிறு விவசாயி</option>
+                <option value="marginal">அலகு விவசாயி</option>
+                <option value="general">பொது விவசாயி</option>
+            </select><br>
+
+            <label for="location">📍 உங்கள் இடம்:</label>
+            <input type="text" id="location" name="location" required><br>
+
+            <label for="farming_type">🌾 விவசாயத்தின் வகை:</label>
+            <select id="farming_type" name="farming_type" required>
+                <option value="" disabled selected>வகையை தேர்வு செய்யவும்</option>
+                <option value="organic">செயற்கைமற்ற (இயற்கை) விவசாயம்</option>
+                <option value="horticulture">தோட்டக்கலை</option>
+                <option value="dairy">பால்வளப் பண்ணை</option>
+                <option value="general">பொது விவசாயம்</option>
+            </select><br>
+
+            <button type="submit">🔍 திட்டங்களை காண</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 விவசாய உதவித் திட்டங்கள் | விவசாயிகளுக்காக</p>
+    </footer>
+
+</body>
+</html>
