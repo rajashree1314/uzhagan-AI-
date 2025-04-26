@@ -1,0 +1,136 @@
+/* Apply Tamil Fonts */
+
+
+
+/* Global Styles */
+body {
+    font-family: 'Baloo Tamma 2', 'Noto Sans Tamil', 'Catamaran', sans-serif;
+  
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1, h2, p, label, button {
+    font-family: 'Baloo Tamma 2', 'Noto Sans Tamil', 'Catamaran', sans-serif;
+}
+/* Header */
+header {
+    background-image: url('header.jpg');
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Form Styling - Centering and Enhancing */
+form {
+    background-image: url('bg.jpg');
+    
+    padding: 25px;
+    width: 50%;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+form label {
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    display: block;
+    margin-top: 12px;
+    text-align: left;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #ff9800;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+/* Scheme Container */
+.schemes-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Scheme Cards */
+.scheme-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    margin: 15px 0;
+    border-left: 10px solid #4CAF50;
+}
+
+.scheme-card h2 {
+    color: #2e7d32;
+    font-size: 22px;
+}
+
+.scheme-card p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.scheme-card a {
+    color: #d32f2f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.scheme-card a:hover {
+    text-decoration: underline;
+}
+
+/* Recommendations Page */
+/* Recommendations Page */
+recommendations {
+    background-image: url('bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    padding: 50px 0;
+}
+
+.recommendations .scheme-card {
+    background-image: url('bg.jpg')
+    
+}
+
+
+/* Footer */
+footer {
+    background-color: #0a7219;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 20px;
+}
