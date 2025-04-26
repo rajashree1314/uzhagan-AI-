@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>விவசாயி திட்டங்கள் / Farmer Schemes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        form {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            display: block;
+            width: 100%;
+            margin-top: 5px;
+            padding: 8px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>விவசாயி திட்டங்களை கண்டறியவும் / Find Farmer Schemes</h2>
+    
+    <form action="/recommend" method="POST">
+        <label>நில அளவு (ஹெக்டேயரில்) / Land Size (in hectares):</label>
+        <input type="number" name="land_size" required><br>
+
+        <label>விவசாயி வகை / Category:</label>
+        <select name="category">
+            <option value="small">சிறு விவசாயி / Small Farmer</option>
+            <option value="marginal">உளவியல் விவசாயி / Marginal Farmer</option>
+            <option value="general">பொதுவான விவசாயி / General Farmer</option>
+        </select><br>
+
+        <label>இருப்பிடம் / Location:</label>
+        <input type="text" name="location" required><br>
+
+        <label>விவசாய வகை / Type of Farming:</label>
+        <select name="farming_type">
+            <option value="organic">இயற்கை விவசாயம் / Organic Farming</option>
+            <option value="horticulture">தோட்டக்கலை / Horticulture</option>
+            <option value="dairy">பால் பண்ணை / Dairy Farming</option>
+            <option value="general">பொதுவான விவசாயம் / General Agriculture</option>
+        </select><br>
+
+        <button type="submit">திட்டங்களை கண்டறியவும் / Find Schemes</button>
+    </form>
+
+    <h2>கிடைக்கக்கூடிய விவசாய திட்டங்கள் / Available Farmer Schemes</h2>
+    <table>
+        <tr>
+            <th>திட்டத்தின் பெயர் / Scheme Name</th>
+            <th>தகுதி / Eligibility</th>
+            <th>நன்மைகள் / Benefits</th>
+            <th>ஆவணங்கள் தேவை / Required Documents</th>
+            <th>விண்ணப்ப செயல்முறை / Apply Process</th>
+            <th>தொடர்பு தகவல் / Contact Info</th>
+        </tr>
+        {% for scheme in schemes %}
+        <tr>
+            <td>{{ scheme.scheme_name }}</td>
+            <td>{{ scheme.eligibility }}</td>
+            <td>{{ scheme.benefits }}</td>
+            <td>{{ scheme.required_documents }}</td>
+            <td>{{ scheme.apply_process }}</td>
+            <td>{{ scheme.contact_info }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
